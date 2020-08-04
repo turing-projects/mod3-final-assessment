@@ -13,6 +13,9 @@ export class App extends Component {
   }
 
   componentDidMount() {
+    getUrls()
+    .then(data => this.setState({ urls: [...this.state.urls, data.urls] }))
+    .catch(err => console.error(err))
   }
 
   render() {
