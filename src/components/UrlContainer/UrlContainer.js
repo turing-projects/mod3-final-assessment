@@ -17,11 +17,19 @@ const UrlContainer = props => {
     )
   });
 
-  return (
-    <section>
-      { urlEls.length ? urlEls : <p>No urls yet! Find some to shorten!</p> }
-    </section>
-  )
+  if (props.error) {
+    return (
+      <section>
+        <p>{props.error.toString()}</p>
+      </section>
+    )
+  } else {
+    return (
+      <section>
+        { urlEls.length ? urlEls : <p>No urls yet! Find some to shorten!</p> }
+      </section>
+    )
+  }
 }
 
 export default UrlContainer;

@@ -30,7 +30,7 @@ describe('UrlForm', () => {
 
   it('should be able to submit the form', () => {
     const mockSubmit = jest.fn();
-    const { getByPlaceholderText, getByRole, debug } = render(
+    const { getByPlaceholderText, getByRole } = render(
       <UrlForm 
         submitUrl={mockSubmit}
       />)
