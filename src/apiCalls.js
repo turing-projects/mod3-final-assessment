@@ -13,3 +13,13 @@ export const postUrl = (url, title) => {
   })
   .then(response => response.json())
 }
+
+export const deleteUrl = async (id) => {
+  let url = await fetch(`http://localhost:3001/api/v1/urls/${id}`, {
+    method: 'DELETE',
+    headers: {
+      'Content-Type': 'application/JSON'
+    }
+  })
+   return url;
+}

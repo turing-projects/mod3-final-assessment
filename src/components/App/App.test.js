@@ -3,6 +3,7 @@ import App from './App';
 
 import { render, waitFor, fireEvent } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+jest.mock('../apiCalls');
 
 describe('App', () => {
 
