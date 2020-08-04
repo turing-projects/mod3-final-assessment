@@ -11,7 +11,6 @@ class UrlForm extends Component {
   }
 
   handleNameChange = e => {
-    console.log(e.target.name);
     this.setState({ [e.target.name]: e.target.value });
   }
 
@@ -26,7 +25,6 @@ class UrlForm extends Component {
   }
 
   render() {
-    console.log(this.props);
     return (
       <form>
         <input

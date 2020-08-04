@@ -20,7 +20,7 @@ export class App extends Component {
 
   submitUrl = (info) => {
     postUrl(info.urlToShorten, info.title)
-      .then(data => console.log(data))
+      .then(data => this.setState({ urls: [...this.state.urls, data] }))
       .catch(err => console.error(err))
   }
 
