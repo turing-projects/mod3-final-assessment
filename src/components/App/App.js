@@ -24,7 +24,7 @@ export class App extends Component {
 
   submitUrl = (info) => {
     postUrl(info.urlToShorten, info.title)
-      .then(data => this.setState({ urls: [...this.state.urls, data ]}))
+      .then(data => this.fetchUrls())
       .catch(err => console.error(err))
   }
 
@@ -35,7 +35,6 @@ export class App extends Component {
   }
 
   render() {
-    console.log(this.state.urls);
     return (
       <main className="App">
         <header>
