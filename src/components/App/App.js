@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import { getUrls } from '../../apiCalls';
+import { getUrls, postUrl } from '../../apiCalls';
 import UrlContainer from '../UrlContainer/UrlContainer';
 import UrlForm from '../UrlForm/UrlForm';
 
@@ -18,12 +18,18 @@ export class App extends Component {
     .catch(err => console.error(err))
   }
 
+  submitUrl = (info) => {
+    postUrl(info.urlToShorten, info.title)
+      .then(data => console.log(data))
+      .catch(err => console.error(err))
+  }
+
   render() {
     return (
       <main className="App">
         <header>
           <h1>URL Shortener</h1>
-          <UrlForm />
+          <UrlForm submitUrl={this.submitUrl}/>
         </header>
 
         <UrlContainer urls={this.state.urls}/>
